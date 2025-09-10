@@ -34,7 +34,9 @@ ui/test-results/
 *.log
 
 # Large artifacts / models / data
-gtfs_subway/models/
+gtfs_subway/**
+!gtfs_subway/.gitkeep
+infra/data/gtfs/
 gtfs_subway/*.zip
 *.pkl
 *.pickle
