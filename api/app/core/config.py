@@ -12,8 +12,8 @@ class Settings(BaseSettings):
     # Database
     DB_URL: str = "postgresql://postgres:postgres@db:5432/mta"
 
-    # External tokens (required)
-    MAPBOX_TOKEN: str
+    # External tokens (optional for API/runtime; required for UI build)
+    MAPBOX_TOKEN: str | None = None
 
     # Static GTFS paths (host defaults)
     MTA_GTFS_STATIC_PATH: str = (
