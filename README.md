@@ -41,7 +41,7 @@ Notes
 - GTFS static should be available under `/data/gtfs` (mounted from `gtfs_subway/`).
 
 ### Quickstart (Docker)
-1) Place GTFS static ZIP or `stops.txt` in `infra/data/gtfs` or host path `/home/stelios/mta-subway-anomaly-scan/gtfs_subway`.
+1) Place GTFS static ZIP or `stops.txt` in `gtfs_subway/` (repo-relative) or `infra/data/gtfs`.
 2) `cp infra/.env.example infra/.env` and set `MAPBOX_TOKEN`.
 3) `docker compose up -d db api worker trainer ui`.
 4) API: `http://localhost:8000/api/health` • UI: `http://localhost:3000/map`.

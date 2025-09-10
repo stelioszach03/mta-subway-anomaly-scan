@@ -23,7 +23,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - /home/stelios/mta-subway-anomaly-scan/gtfs_subway:/data/gtfs:ro
+      - ./gtfs_subway:/data/gtfs:ro
 
   worker:
     build:
@@ -34,7 +34,7 @@ services:
     depends_on:
       - db
     volumes:
-      - /home/stelios/mta-subway-anomaly-scan/gtfs_subway:/data/gtfs:rw
+      - ./gtfs_subway:/data/gtfs:rw
 
   trainer:
     build:
@@ -46,7 +46,7 @@ services:
       - db
     command: ["python", "-m", "worker.ml_online"]
     volumes:
-      - /home/stelios/mta-subway-anomaly-scan/gtfs_subway:/data/gtfs:rw
+      - ./gtfs_subway:/data/gtfs:rw
 
   ui:
     build:

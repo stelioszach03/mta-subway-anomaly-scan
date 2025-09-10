@@ -16,10 +16,9 @@ class Settings(BaseSettings):
     MAPBOX_TOKEN: str | None = None
 
     # Static GTFS paths (host defaults)
-    MTA_GTFS_STATIC_PATH: str = (
-        "/home/stelios/mta-subway-anomaly-scan/gtfs_subway/mta_gtfs_static.zip"
-    )
-    GTFS_STATIC_DIR: str = "/home/stelios/mta-subway-anomaly-scan/gtfs_subway"
+    # Prefer container mount path; for local host dev set via envs
+    MTA_GTFS_STATIC_PATH: str = "/data/gtfs/mta_gtfs_static.zip"
+    GTFS_STATIC_DIR: str = "/data/gtfs"
 
     # Logging
     LOG_LEVEL: str = "INFO"
